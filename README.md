@@ -1,33 +1,26 @@
-📌 Sobre o Projeto
-Este projeto permite realizar operações completas de CRUD de clientes, incluindo:
-
-✅ Cadastro de cliente
-📄 Listagem de clientes ativos
-🔍 Busca por ID
-✏️ Atualização de dados
-❌ Exclusão lógica (soft delete)
-
-A aplicação utiliza o conceito de soft delete, mantendo os registros no banco de dados, mas marcando-os como inativos.
-
-🧱 Arquitetura
-O projeto segue o padrão em camadas:
+📌 About the Project
+This project provides full CRUD operations for customer management, including:
+✅ Create customer
+📄 List active customers
+🔍 Find customer by ID
+✏️ Update customer data
+❌ Logical deletion (soft delete)
+The application uses the soft delete approach, meaning records are not physically removed from the database but marked as inactive instead.
+🧱 Architecture
+The project follows a layered architecture:
 controller → service → repository → entity
-Controller → Recebe as requisições HTTP
-Service → Contém a lógica de negócio
-Repository → Comunicação com o banco (JPA)
-DTOs → Transferência de dados
-
-
-🛠️ Tecnologias Utilizadas
+Controller → Handles HTTP requests
+Service → Contains business logic
+Repository → Database communication (JPA)
+DTOs → Data transfer between layers
+🛠️ Technologies Used
 Java 17+
 Spring Boot
 Spring Data JPA
 Lombok
 Maven
-H2 / PostgreSQL (configurável)
-
-
-📂 Estrutura do Projeto
+H2 / PostgreSQL (configurable)
+📂 Project Structure
 cadastroCliente
  └── controller
  └── dto
@@ -35,50 +28,49 @@ cadastroCliente
  └── persistence
       ├── entities
       └── repositories
-
 🔗 Endpoints
-➕ Criar cliente
+➕ Create Customer
 POST /cliente
 Body:
 {
   "nome": "João",
   "telefone": "81999999999"
 }
-📄 Listar clientes
+📄 List Customers
 GET /cliente
-🔍 Buscar por ID
+🔍 Get Customer by ID
 GET /cliente/{id}
-✏️ Atualizar cliente
+✏️ Update Customer
 PUT /cliente/{id}
 Body:
 {
-  "nome": "Novo Nome",
+  "nome": "New Name",
   "telefone": "88888888"
 }
-❌ Deletar cliente (soft delete)
+❌ Delete Customer (Soft Delete)
 DELETE /cliente/{id}
-⚙️ Como rodar o projeto
-# Clonar o repositório
-git clone https://github.com/seu-usuario/seu-repo.git
+⚙️ How to Run the Project
+# Clone the repository
+git clone https://github.com/your-username/your-repo.git
 
-# Entrar na pasta
-cd seu-repo
+# Navigate to the folder
+cd your-repo
 
-# Rodar a aplicação
+# Run the application
 ./mvnw spring-boot:run
-🧠 Boas práticas aplicadas
-✔️ Arquitetura em camadas
-✔️ Separação de responsabilidades
-✔️ Uso de DTOs
-✔️ Soft delete
-✔️ Tratamento de exceções com Optional
-✔️ Código limpo e legível
-📈 Melhorias futuras
-🔐 Validação com Bean Validation (@Valid)
-📊 Paginação e filtros
-📦 Dockerização
-📑 Documentação com Swagger (OpenAPI)
-🔒 Autenticação com JWT
-👨‍💻 Autor
-Desenvolvido por Lucas Neves 🚀
-Se quiser trocar ideia sobre backend, só chegar!
+🧠 Best Practices Applied
+✔️ Layered architecture
+✔️ Separation of concerns
+✔️ DTO usage
+✔️ Soft delete implementation
+✔️ Exception handling with Optional
+✔️ Clean and readable code
+📈 Future Improvements
+🔐 Validation with Bean Validation (@Valid)
+📊 Pagination and filtering
+📦 Docker support
+📑 API documentation with Swagger (OpenAPI)
+🔒 Authentication with JWT
+👨‍💻 Author
+Developed by Lucas Neves 🚀
+Feel free to reach out if you want to talk about backend development!
